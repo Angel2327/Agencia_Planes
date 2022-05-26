@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Agencia_Planes.Models.Ciudade>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Ciudades</h1>
+
+<p>
+    <a asp-action="Create">Registar Nueva Ciudad Destino</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreCiudad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Geografia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cultura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Clima)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Geolocalizacion)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreCiudad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Geografia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cultura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clima)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Geolocalizacion)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CodigoCiudad">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.CodigoCiudad">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.CodigoCiudad">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

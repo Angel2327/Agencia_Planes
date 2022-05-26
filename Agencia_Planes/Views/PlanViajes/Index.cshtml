@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Agencia_Planes.Models.PlanViaje>
+
+@{
+    ViewData["Title"] = "Planes de Viaje";
+}
+
+<h1>Planes de Viaje</h1>
+
+<p>
+    <a asp-action="Create">Generar Nuevo Plan De Viaje</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombrePlan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActividadesIncluidas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Costo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IncluyeHospedaje)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaInicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaFin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodigoCiudad_PlanViaje)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombrePlan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActividadesIncluidas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Costo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IncluyeHospedaje)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaInicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaFin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoCiudad_PlanViaje.CodigoCiudad)
+            </td>
+            <td>
+                <a asp-action="Editar" asp-route-id="@item.CodigoPlan">Editar</a> |
+                <a asp-action="Detalles" asp-route-id="@item.CodigoPlan">Detalles</a> |
+                <a asp-action="Eliminar" asp-route-id="@item.CodigoPlan">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

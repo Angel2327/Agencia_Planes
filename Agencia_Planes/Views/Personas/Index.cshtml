@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Agencia_Planes.Models.Persona>
+
+@{
+    ViewData["Title"] = "Personas";
+}
+
+<h1>Usuarios</h1>
+
+<p>
+    <a asp-action="Create">Resgistrar Nuevo Usuario</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Edad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contraseña)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Correo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Edad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contraseña)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Correo)
+            </td>
+            <td>
+                <a asp-action="Editar" asp-route-id="@item.Cedula">Editar</a> |
+                <a asp-action="Detalles" asp-route-id="@item.Cedula">Detalles</a> |
+                <a asp-action="Eliminar" asp-route-id="@item.Cedula">Eleminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,53 @@
+﻿@model Agencia_Planes.Models.TransporteEnAvion
+
+@{
+    ViewData["Title"] = "Crear";
+}
+
+<h1>Crear</h1>
+
+<h4>TransporteEnAvion</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CodigoDeVuelo" class="control-label"></label>
+                <input asp-for="CodigoDeVuelo" class="form-control" />
+                <span asp-validation-for="CodigoDeVuelo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Abordo" class="control-label"></label>
+                <input asp-for="Abordo" class="form-control" />
+                <span asp-validation-for="Abordo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Aeroliena" class="control-label"></label>
+                <input asp-for="Aeroliena" class="form-control" />
+                <span asp-validation-for="Aeroliena" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HoraSalida" class="control-label"></label>
+                <input asp-for="HoraSalida" class="form-control" />
+                <span asp-validation-for="HoraSalida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HoraLlegada" class="control-label"></label>
+                <input asp-for="HoraLlegada" class="form-control" />
+                <span asp-validation-for="HoraLlegada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver a la lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

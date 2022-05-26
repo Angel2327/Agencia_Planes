@@ -1,0 +1,64 @@
+﻿@model Agencia_Planes.Models.PlanViaje
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1>Editar</h1>
+
+<h4>PlanViaje</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CodigoPlan" />
+            <div class="form-group">
+                <label asp-for="CodigoCiudad" class="control-label"></label>
+                <select asp-for="CodigoCiudad" class="form-control" asp-items="ViewBag.CodigoCiudad"></select>
+                <span asp-validation-for="CodigoCiudad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NombrePlan" class="control-label"></label>
+                <input asp-for="NombrePlan" class="form-control" />
+                <span asp-validation-for="NombrePlan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ActividadesIncluidas" class="control-label"></label>
+                <input asp-for="ActividadesIncluidas" class="form-control" />
+                <span asp-validation-for="ActividadesIncluidas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Costo" class="control-label"></label>
+                <input asp-for="Costo" class="form-control" />
+                <span asp-validation-for="Costo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IncluyeHospedaje" class="control-label"></label>
+                <input asp-for="IncluyeHospedaje" class="form-control" />
+                <span asp-validation-for="IncluyeHospedaje" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaInicio" class="control-label"></label>
+                <input asp-for="FechaInicio" class="form-control" />
+                <span asp-validation-for="FechaInicio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaFin" class="control-label"></label>
+                <input asp-for="FechaFin" class="form-control" />
+                <span asp-validation-for="FechaFin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver a la Lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

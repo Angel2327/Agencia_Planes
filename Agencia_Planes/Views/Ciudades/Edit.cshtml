@@ -1,0 +1,54 @@
+﻿@model Agencia_Planes.Models.Ciudade
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1>Editar</h1>
+
+<h4>Ciudades</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CodigoCiudad" />
+            <div class="form-group">
+                <label asp-for="NombreCiudad" class="control-label"></label>
+                <input asp-for="NombreCiudad" class="form-control" />
+                <span asp-validation-for="NombreCiudad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Geografia" class="control-label"></label>
+                <input asp-for="Geografia" class="form-control" />
+                <span asp-validation-for="Geografia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cultura" class="control-label"></label>
+                <input asp-for="Cultura" class="form-control" />
+                <span asp-validation-for="Cultura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Clima" class="control-label"></label>
+                <input asp-for="Clima" class="form-control" />
+                <span asp-validation-for="Clima" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Geolocalizacion" class="control-label"></label>
+                <input asp-for="Geolocalizacion" class="form-control" />
+                <span asp-validation-for="Geolocalizacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver a la lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

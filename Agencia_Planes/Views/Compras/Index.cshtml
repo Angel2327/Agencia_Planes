@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Agencia_Planes.Models.Compra>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Compras</h1>
+
+<p>
+    <a asp-action="Create">Registrar Nueva Compra</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PrecioPagado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroPersonas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cedula_Compra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodigoDeVuelo_Compra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodigoPlan_Compra)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioPagado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroPersonas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cedula_Compra.Cedula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoDeVuelo_Compra.CodigoDeVuelo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoPlan_Compra.CodigoPlan)
+            </td>
+            <td>
+                <a asp-action="Editar" asp-route-id="@item.FechaCompra">Editar</a> |
+                <a asp-action="Detalles" asp-route-id="@item.FechaCompra">Detalles</a> |
+                <a asp-action="Eliminar" asp-route-id="@item.FechaCompra">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

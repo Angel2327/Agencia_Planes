@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Agencia_Planes.Models.TransporteEnAvion>
+
+@{
+    ViewData["Title"] = "Transporte en Avion";
+}
+
+<h1>Transporte en Avion</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Abordo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Aeroliena)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoraSalida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoraLlegada)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Abordo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Aeroliena)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoraSalida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoraLlegada)
+            </td>
+            <td>
+                <a asp-action="Editar" asp-route-id="@item.CodigoDeVuelo">Editar</a> |
+                <a asp-action="Detalles" asp-route-id="@item.CodigoDeVuelo">Detalles</a> |
+                <a asp-action="Eliminar" asp-route-id="@item.CodigoDeVuelo">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
