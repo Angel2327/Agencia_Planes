@@ -1,0 +1,8 @@
+Codigo_Plan,Codigo_Ciudad,Nombre_Plan,Actividades_Incluidas,Costo,Incluye_Hospedaje,Fecha_Inicio,Fecha_Fin
+1,21,"Plan Rio De Janeiro","Visita Al Cristo Rey",1500000,Si,2022-03-20,2022-03-30
+2,84,"Plan Cusco","Visita al sitio arqueologico inca Machu Picchu",2250000,Si,2022-09-13,2022-09-20
+3,93,"Plan Barcelona","Entrada al Estadio Camp Nou",1750000,No,2022-05-20,2022-05-25
+4,11,"Plan Hawaii","Visita a todas las playas",2850000,Si,2022-07-17,2022-07-27
+5,58,"Plan Paris","Visita a la Torre Eiffel",3900000,Si,2022-12-23,2022-12-26
+6,37,"Plan Medellin","Visita Al Pueblito Paisa",1200000,Si,2022-01-05,2022-01-10
+7,231,"Plan Acapulco","Visita a todas las playas",2500000,Si,2022-06-17,2022-06-30
